@@ -13,6 +13,6 @@ public class Usuarios {
     private String id;
 
     private String nombre;
-    private String contrasena;
+    private String contraseña;
     private Number rol;
 }
