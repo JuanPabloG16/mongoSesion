@@ -6,10 +6,10 @@ nixpkgs = [
 
 [phases.build]
 commands = [
-  "mvn clean install"
+  "cd demo && mvn clean install"
 ]
 
 [phases.start]
 commands = [
-  "java -jar target/*.jar"
+  "java -jar demo/target/*.jar"
 ]
