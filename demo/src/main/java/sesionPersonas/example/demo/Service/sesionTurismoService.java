@@ -31,4 +31,11 @@ public class sesionTurismoService {
             throw new RuntimeException("Contraseña incorrecta");
         }
     }
+
+    // Nuevo método para crear un usuario
+    public Usuarios crearUsuario(Usuarios usuario) {
+        // Asignar rol 2 automáticamente
+        usuario.setRol(2);
+        return cuentasRepository.save(usuario);
+    }
 }

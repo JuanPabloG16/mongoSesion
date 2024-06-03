@@ -30,4 +30,10 @@ public class sesionTurismoController {
     public Usuarios login(@RequestBody Usuarios usuario) {
         return sesionTurismoService.login(usuario);
     }
+
+    // Nuevo endpoint para crear un usuario
+    @PostMapping("/crearUsuario")
+    public Usuarios crearUsuario(@RequestBody Usuarios usuario) {
+        return sesionTurismoService.crearUsuario(usuario);
+    }
 }
