@@ -1,7 +1,8 @@
 FROM openjdk:17
 
 # Instalar Maven
-RUN apt-get update && apt-get install -y maven
+RUN apt-get update && \
+    apt-get install -y maven
 
 WORKDIR /app
 
