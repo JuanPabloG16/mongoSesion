@@ -1,0 +1,15 @@
+[phases.setup]
+nixpkgs = [
+  "maven",
+  "openjdk"
+]
+
+[phases.build]
+commands = [
+  "mvn clean install"
+]
+
+[phases.start]
+commands = [
+  "java -jar target/*.jar"
+]
