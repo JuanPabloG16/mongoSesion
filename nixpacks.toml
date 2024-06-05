@@ -11,5 +11,5 @@ commands = [
 
 [phases.start]
 commands = [
-  "java -jar demo/target/*.jar"
+  "java -jar demo/target/demo-0.0.1-SNAPSHOT.jar"
 ]
