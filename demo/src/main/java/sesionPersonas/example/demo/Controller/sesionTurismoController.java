@@ -30,6 +30,7 @@ public class sesionTurismoController {
     @PostMapping("/login")
     public Usuarios login(@RequestBody Usuarios usuario) {
         System.out.println("Nombre de usuario recibido: " + usuario.getNombre());
+        System.out.println("Nombre de usuario recibido: " + usuario.getContraseña());
         return turismoService.login(usuario);
     }
 
