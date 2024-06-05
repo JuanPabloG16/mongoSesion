@@ -1,6 +1,5 @@
 [phases.setup]
 nixpkgs = [
-  "maven",
   "openjdk"
 ]
 
@@ -11,5 +10,5 @@ commands = [
 
 [phases.start]
 commands = [
-  "java -jar demo/target/*.jar"
+  "java -jar demo/target/demo-0.0.1-SNAPSHOT.jar"
 ]
