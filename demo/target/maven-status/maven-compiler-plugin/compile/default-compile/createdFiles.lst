@@ -1,0 +1,9 @@
+sesionPersonas\example\demo\Model\Usuarios.class
+sesionPersonas\example\demo\Repository\ReseñaRepository.class
+sesionPersonas\example\demo\Service\sesionTurismoService.class
+sesionPersonas\example\demo\Exception\ResourceNotFoundException.class
+sesionPersonas\example\demo\SesionPersonasApplication.class
+sesionPersonas\example\demo\Repository\CuentasRepository.class
+sesionPersonas\example\demo\SesionPersonasApplication$1.class
+sesionPersonas\example\demo\Model\Reseña.class
+sesionPersonas\example\demo\Controller\sesionTurismoController.class
