@@ -6,7 +6,7 @@ nixpkgs = [
 
 [phases.build]
 commands = [
-  "cd demo && mvn clean install -DskipTests"
+  "cd demo && mvn clean install"
 ]
 
 [phases.start]
