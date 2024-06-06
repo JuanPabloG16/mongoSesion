@@ -12,7 +12,7 @@ public class Reseña {
     private int valor;
     private String comentario;
     private String usuarioID;
-    private String datoID;
+    private int datoID;
     private String estadoID;
 
     // Constructor, getters y setters
