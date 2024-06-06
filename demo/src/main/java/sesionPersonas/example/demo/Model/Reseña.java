@@ -1,5 +1,6 @@
 package sesionPersonas.example.demo.Model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
@@ -7,6 +8,7 @@ import lombok.Data;
 @Data
 public class Reseña {
 
+    @Id
     private int id; // Cambiado el tipo de datos a int
 
     private int valor;
@@ -14,6 +16,4 @@ public class Reseña {
     private String usuarioID;
     private int datoID;
     private String estadoID;
-
-    // Constructor, getters y setters
 }

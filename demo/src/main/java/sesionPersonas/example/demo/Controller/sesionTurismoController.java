@@ -1,11 +1,9 @@
 package sesionPersonas.example.demo.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import sesionPersonas.example.demo.Model.Reseña;
 import sesionPersonas.example.demo.Model.Usuarios;
 import sesionPersonas.example.demo.Service.sesionTurismoService;
@@ -16,11 +14,8 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:5173")
 public class sesionTurismoController {
 
-    private final sesionTurismoService turismoService;
-
-    public sesionTurismoController(sesionTurismoService turismoService) {
-        this.turismoService = turismoService;
-    }
+    @Autowired
+    private sesionTurismoService turismoService;
 
     @GetMapping("/usuarios")
     public List<Usuarios> obtenerTodosLosUsuarios() {
@@ -29,12 +24,9 @@ public class sesionTurismoController {
 
     @PostMapping("/login")
     public Usuarios login(@RequestBody Usuarios usuario) {
-        System.out.println("Nombre de usuario recibido: " + usuario.getNombre());
-        System.out.println("Nombre de usuario recibido: " + usuario.getContraseña());
         return turismoService.login(usuario);
     }
 
-    // Nuevo endpoint para crear un usuario
     @PostMapping("/crearUsuario")
     public Usuarios crearUsuario(@RequestBody Usuarios usuario) {
         return turismoService.crearUsuario(usuario);
@@ -46,9 +38,14 @@ public class sesionTurismoController {
         return ResponseEntity.ok().body(nuevaResena);
     }
 
-    // Endpoint para obtener todas las reseñas
     @GetMapping("/reseñas")
     public List<Reseña> obtenerTodasLasReseñas() {
         return turismoService.obtenerTodasLasReseñas();
+    }
+
+    @PutMapping("/actualizarResena/{id}")
+    public ResponseEntity<Reseña> actualizarResena(@PathVariable int id, @RequestBody Reseña resena) {
+        Reseña resenaActualizada = turismoService.actualizarResena(id, resena);
+        return ResponseEntity.ok().body(resenaActualizada);
     }
 }
